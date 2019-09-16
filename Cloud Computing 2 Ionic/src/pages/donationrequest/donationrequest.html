@@ -1,0 +1,104 @@
+<!--
+  Generated template for the DonationrequestPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+     <!--<ion-buttons start><button menuToggle><ion-icon name="menu"></ion-icon></button></ion-buttons>-->
+	<ion-buttons end><button (click)="logout()"><ion-icon name="log-out"></ion-icon></button></ion-buttons>
+	
+    <ion-title>Donation Request</ion-title>
+    </ion-navbar>
+	
+</ion-header>
+
+ 
+<ion-content padding>
+  <ion-list>
+  
+	   <ion-item>
+        <ion-label floating>Name of Organizations</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="userData.name_of_organization"></ion-input>
+      </ion-item>
+		
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="userData.onsite_contact_first_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="userData.onsite_contact_last_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="userData.contact_email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone Number</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="userData.contact_phone"></ion-input>
+      </ion-item>
+  </ion-list>
+
+  <ion-title>Requirement Details</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Food Items</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.type_of_food"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Special Instructions for Handling Food</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.is_any_of_it_frozen"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-title>Dropoff Details</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Dropoff Address</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.pickup_address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Zip Code</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.zip_code"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Dropoff Date</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" min="2019" max="2020" [(ngModel)]="userData.pickup_date">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Dropoff Time</ion-label>
+      <ion-datetime displayFormat="hh:mm A" minuteValues="0,15,30,45" [(ngModel)]="userData.pickup_time"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-title>Additional Details</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Additional Dropoff Instructions</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="userData.any_additional_pickup_instructions"></ion-input>
+    </ion-item>
+
+    <ion-item text-center *ngIf=message>
+        <p style="color:#FF0000;" ><strong>{{message}}</strong></p>
+      </ion-item>  
+	  <ion-item>
+		<button ion-button color="primary" block (click)="donaterequest()">Post Food Request</button>
+    </ion-item>
+  </ion-list>
+	  
+	
+
+</ion-content>

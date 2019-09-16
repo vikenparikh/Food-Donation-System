@@ -1,0 +1,47 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+     <!--<ion-buttons start><button menuToggle><ion-icon name="menu"></ion-icon></button></ion-buttons>-->
+	<ion-buttons end><button (click)="logout()"><ion-icon name="log-out"></ion-icon></button></ion-buttons>
+	
+    <ion-title>Dashboard</ion-title>
+    </ion-navbar>
+	
+</ion-header>
+
+ 
+<ion-content padding>
+	  <ion-item *ngIf="userData.usertype =='0' ">
+      <button ion-button color="primary" block (click)="donate()">Donate</button>
+      </ion-item>
+
+	  <ion-item *ngIf="userData.usertype =='0' ">
+      <button ion-button color="primary" block (click)="viewdonationrequest()">View Donation Requests</button>
+      </ion-item>
+	  
+	  <ion-item *ngIf="userData.usertype =='0' ">
+      <button ion-button color="primary" block (click)="volunteer()">Volunteer</button>
+      </ion-item>
+
+	  <ion-item *ngIf="userData.usertype =='1' ">
+      <button ion-button color="primary" block (click)="donationrequest()">Donation Request</button>
+      </ion-item>
+	  
+	  <ion-item *ngIf="userData.usertype =='1' ">
+      <button ion-button color="primary" block (click)="viewdonations()">View Donations</button>
+      </ion-item>
+	  
+	  	  <ion-item *ngIf="userData.usertype =='1' ">
+      <button ion-button color="primary" block (click)="viewvolunteers()">View Volunteers</button>
+      </ion-item>
+
+      <ion-item text-center *ngIf=message>
+        <p style="color:#FF0000;" ><strong>{{message}}</strong></p>
+      </ion-item>  
+
+</ion-content>
